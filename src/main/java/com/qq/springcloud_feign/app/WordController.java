@@ -4,10 +4,7 @@ import com.qq.springcloud_feign.pojo.Word;
 import com.qq.springcloud_feign.service.WordService;
 import com.qq.springcloud_feign.vo.R;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,7 +17,7 @@ public class WordController {
         return wordService.save(word);
     }
     @GetMapping("/wordall.do")
-    public List<Word> list(int flag){
+    public List<Word> list(@RequestParam int flag){
         return wordService.list(flag);
     }
 }
